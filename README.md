@@ -1,6 +1,6 @@
 # Alara Lukagro
 
-An offline Progressive Web Application (PWA) camera app with React and Alara Lukagro
+An offline Progressive Web Application (PWA) camera app with React
 
 <!-- //- ![Alara Lukagro - Online Mode](./images/demo_online.gif)
 
