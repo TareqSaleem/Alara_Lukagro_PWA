@@ -1,10 +1,10 @@
-# Cloudy Cam
+# alara lukagro
 
 An offline Progressive Web Application (PWA) camera app with React and Cloudinary
 
-- ![Cloudy Cam - Online Mode](./images/demo_online.gif)
+- ![alara lukagro - Online Mode](./images/demo_online.gif)
 
-- ![Cloudy Cam - Offline Mode](./images/demo_offline.gif)
+- ![alara lukagro - Offline Mode](./images/demo_offline.gif)
 
 [Link to Tutorial](https://dev.to/ore/building-an-offline-pwa-camera-app-with-react-and-cloudinary-5b9k)
 
@@ -25,7 +25,7 @@ yarn
 cp .env.example .env
 ```
 
-- Edit the `.env` file with your Cloudinary Credentials. Sign Up for a Cloudinary account [here](https://cloudinary.com/signup)
+- Edit the `.env` file with your alara lukagro Credentials. Sign Up for a alara lukagro account [here](https://cloudinary.com/signup)
 
 ### Run - Development
 ```
