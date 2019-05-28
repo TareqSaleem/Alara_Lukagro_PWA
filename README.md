@@ -1,10 +1,10 @@
-# alara lukagro
+# Alara Lukagro
 
-An offline Progressive Web Application (PWA) camera app with React and Cloudinary
+An offline Progressive Web Application (PWA) camera app with React and Alara Lukagro
 
-- ![alara lukagro - Online Mode](./images/demo_online.gif)
+- ![Alara Lukagro - Online Mode](./images/demo_online.gif)
 
-- ![alara lukagro - Offline Mode](./images/demo_offline.gif)
+- ![Alara Lukagro - Offline Mode](./images/demo_offline.gif)
 
 [Link to Tutorial](https://dev.to/ore/building-an-offline-pwa-camera-app-with-react-and-cloudinary-5b9k)
 
