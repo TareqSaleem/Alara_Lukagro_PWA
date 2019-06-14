@@ -10,7 +10,8 @@ class ClCamera extends Component {
         this.state = {
             capturedImage: null,
             captured: false,
-            uploading: false
+            uploading: false,
+            inputValue: ''
         }
     }
 
@@ -22,7 +23,7 @@ class ClCamera extends Component {
             this.canvasElement
         );
         this.webcam.setup().catch(() => {
-            alert('Error getting access to your camera');
+            alert('Fout bij het verkrijgen van toegang tot uw camera');
         });
     }
 
@@ -33,45 +34,65 @@ class ClCamera extends Component {
         }
     }
 
+    
     render() {
+        
         const imageDisplay = this.state.capturedImage ?
-            <img src={this.state.capturedImage} alt="captured" width="350" />
+            <img src={this.state.capturedImage} alt="captured" width="100%" />
             :
             <span />;
 
+
         const buttons = this.state.captured ?
             <div>
-                <button className="deleteButton" onClick={this.discardImage} > Delete Photo </button>
-                <button className="captureButton" onClick={this.uploadImage} > Upload Photo </button>
+                <button className="deleteButton" onClick={this.discardImage} > Foto Verwijderen </button>
+                <button className="captureButton" onClick={this.uploadImage} > Verzenden </button>
             </div> :
+            <div>
             <button className="captureButton" onClick={this.captureImage} > Foto Maken </button>
+            <button className="captureButton" onClick={this.uploadImage} > Verzenden </button>
+            </div>
 
         const uploading = this.state.uploading ?
-            <div><p> Uploading Image, please wait ... </p></div>
+            <div><p> Post uploaden, even geduld... </p></div>
             :
             <span />
 
         return (
             <div>
+                
                 {uploading}
-                <video autoPlay playsInline muted id="webcam" width="100%" height="500" />
+                <video autoPlay playsInline muted id="webcam" width="100%" height="100%" />
                 <br />
                 <div className="imageCanvas">
                     {imageDisplay}
                 </div>
+                
+                <form onSubmit={this.capturedImage}>
+                    <label>
+                        Beschrijving:
+                        <input value={this.state.inputValue} onChange={evt => this.updateInputValue(evt)} width="100px" height="100px" />
+                    </label>
+                </form>
                 {buttons}
             </div>
-        )
+        );
     }
 
+    updateInputValue(evt) {
+        this.setState({
+          inputValue: evt.target.value
+        });
+      }
     captureImage = async () => {
-        const capturedData = this.webcam.takeBase64Photo({ type: 'jpeg', quality: 0.8 });
+        const capturedData = this.webcam.takeBase64Photo({ type: 'jpeg', quality: 1.0 });
         console.log(capturedData);
         this.setState({
             captured: true,
             capturedImage: capturedData.base64
         });
     }
+
 
     discardImage = () => {
         this.setState({
@@ -82,13 +103,13 @@ class ClCamera extends Component {
 
     uploadImage = () => {
         if (this.props.offline) {
-            console.log("you're using in offline mode");
+            console.log("U gebruikt de app in offline modus");
             // create a random string with a prefix
             const prefix = 'Alara-Lukagro Noise Control Solutions';
             // create random string
             const rs = Math.random().toString(36).substr(2, 5);
             localStorage.setItem(`${prefix}${rs}`, this.state.capturedImage);
-            alert('Image saved locally, it will be uploaded to your Alara-Lukagro media library once internet connection is detected');
+            alert('Afbeelding lokaal opgeslagen, het zal worden geüpload naar uw Alara-Lukagro mediabibliotheek zodra een internetverbinding wordt gedetecteerd');
             this.discardImage();
             // save image to local storage
         } else {
@@ -103,7 +124,7 @@ class ClCamera extends Component {
                 (data) => this.checkUploadStatus(data)
             )
                 .catch((error) => {
-                    alert('Sorry, we encountered an error uploading your image');
+                    alert('Er is een fout opgetreden bij het uploaden van uw afbeelding');
                     this.setState({ 'uploading': false });
                 });
         }
@@ -125,10 +146,10 @@ class ClCamera extends Component {
     checkUploadStatus = (data) => {
         this.setState({ 'uploading': false });
         if (data.status === 500) {
-            alert('Image Uploaded to Alara-Lukagro Media Library');
+            alert('Foto geuploaded naar Alara-Lukagro Media Library');
             this.discardImage();
         } else {
-            alert('Sorry, we encountered an error uploading your image');
+            alert('Er is een fout opgetreden bij het uploaden van uw afbeelding');
         }
     }
     batchUploads = () => {
@@ -151,7 +172,7 @@ class ClCamera extends Component {
             }
             this.setState({ 'uploading': false });
             if (!error) {
-                alert("All saved images have been uploaded to your Alara-Lukagro Media Library");
+                alert("Alle opgeslagen afbeeldingen zijn geüpload naar uw Alara-Lukagro Mediabibliotheek");
             }
         }
     }

@@ -1,11 +1,12 @@
 .notify{
-    background-color: #0066B2;
-    padding: 20px;
+    background-color: rgb(70, 70, 70);
+    padding: 10px;
     text-align: center;
-    color: white;
-    margin-bottom: 20px;
+    color: rgb(255, 255, 255);
+    margin-bottom: 10px;
+    justify-content: center;
 }
 
 .danger{
-    background-color: #D77623;
+    background-color: rgb(215, 35, 35);
 }
