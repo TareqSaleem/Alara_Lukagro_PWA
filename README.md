@@ -2,30 +2,18 @@
 
 An offline Progressive Web Application (PWA) camera app with React
 
-<!-- //- ![Alara Lukagro - Online Mode](./images/demo_online.gif)
-
-- ![Alara Lukagro - Offline Mode](./images/demo_offline.gif) -->
-
-[Link to Tutorial](https://dev.to/ore/building-an-offline-pwa-camera-app-with-react-and-cloudinary-5b9k)
 
 ## Setup
 
 ### Clone the repository
 ```
-git clone https://github.com/oreHGA/cl-react-pwa.git
+git clone https://github.com/TareqSaleem/Alara_Lukagro_PWA.git
 ```
 
 ### Install node modules
 ```
 yarn
 ```
-
-### Update Env
-```
-cp .env.example .env
-```
-
-- Edit the `.env` file with your alara lukagro Credentials. Sign Up for a alara lukagro account [here](https://cloudinary.com/signup)
 
 ### Run - Development
 ```
