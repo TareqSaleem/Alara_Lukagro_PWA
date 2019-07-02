@@ -3,6 +3,7 @@ import logo from './logo.png';
 import './App.css';
 import ClCamera from './components/ClCamera';
 import Notifier from './components/Notifier';
+
 class App extends Component {
   constructor() {
     super();
