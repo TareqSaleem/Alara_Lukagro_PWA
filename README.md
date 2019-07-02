@@ -14,7 +14,10 @@ git clone https://github.com/TareqSaleem/Alara_Lukagro_PWA.git
 ```
 yarn
 ```
-
+## Install nodemailer
+```
+npm install nodemailer xoauth2
+```
 ### Run - Development
 ```
 yarn start
