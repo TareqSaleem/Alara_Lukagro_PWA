@@ -20,12 +20,23 @@
 
 
 .imageCanvas{
-    margin-top: 20px;
+    margin-top: 10px;
     height: 100%;
     width: 100%;
     
     /* object-fit: cover; */
     display: flex;
     justify-content: center;
+}
+
+.captureImage{
+    height: 100%;
+    width: 100%;
+}
+
+.form-control{
+    margin-top: 10px;
+    height: 100%;
+    width: 60%;
 }
 

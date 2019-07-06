@@ -70,7 +70,7 @@ class ClCamera extends Component {
     render() {
 
         const imageDisplay = this.state.capturedImage ?
-            <img src={this.state.capturedImage} alt="captured" width="100%" />
+            <img src={this.state.capturedImage} alt="captured" width="100%" height="100%" />
             :
             <span />;
 

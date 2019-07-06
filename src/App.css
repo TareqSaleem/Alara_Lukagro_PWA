@@ -3,11 +3,12 @@
 }
 
 .App-logo {
-  height: 80px;
+  height: 100%;
+  width: 100%;
 }
 
 .App-header {
-  height: 150px;
+  height: 100%;
 }
 
 .App-title {
